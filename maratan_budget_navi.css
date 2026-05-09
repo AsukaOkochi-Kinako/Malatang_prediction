@@ -1,0 +1,604 @@
+/* ============================================================
+   麻辣担 予算ナビ — ネオ中華 BRIGHT THEME
+   参考：NEO町中華・中国春節ポスター・レトロモダン中華
+   ============================================================ */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-color: #3ABFB8;
+  /* 微細な中華格子模様 */
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='4' y='4' width='52' height='52' fill='none' stroke='%23FFFFFF' stroke-opacity='0.1' stroke-width='1'/%3E%3Crect x='14' y='14' width='32' height='32' fill='none' stroke='%23FFFFFF' stroke-opacity='0.07' stroke-width='0.8'/%3E%3C/svg%3E");
+  color: #1A1A1A;
+  font-family: 'Hiragino Maru Gothic Pro', 'YuRound', 'Arial Rounded MT Bold', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ===== HEADER ===== */
+.header {
+  background: #C1121F;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 上部の帯（クリーム色） */
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 8px;
+  background: #FFF5E0;
+}
+
+/* 回字模様ボーダー */
+.header::after {
+  content: '';
+  position: absolute;
+  top: 8px; left: 0; right: 0;
+  height: 6px;
+  background: repeating-linear-gradient(
+    90deg,
+    #FFD000 0px, #FFD000 6px,
+    #C1121F 6px, #C1121F 12px
+  );
+}
+
+.header-stars {
+  position: absolute;
+  top: 22px; left: 0; right: 0;
+  font-size: 12px;
+  letter-spacing: 26px;
+  color: rgba(255, 240, 200, 0.3);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.header-inner {
+  padding: 32px 20px 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.lanterns-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 18px;
+  margin-bottom: 12px;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));
+}
+
+.header-title {
+  font-size: 42px;
+  font-weight: 900;
+  color: #FFF5E0;
+  text-shadow:
+    3px 4px 0 rgba(0,0,0,0.2),
+    0 0 30px rgba(255,200,0,0.15);
+  letter-spacing: 7px;
+  line-height: 1.15;
+}
+
+.header-subtitle {
+  color: rgba(255, 240, 200, 0.75);
+  font-size: 12px;
+  margin-top: 9px;
+  letter-spacing: 3px;
+}
+
+/* クラウドウェーブ（ティール色に合わせる） */
+.cloud-wave {
+  display: block;
+  width: 100%;
+  margin-top: -1px;
+}
+
+/* ===== MAIN ===== */
+.main {
+  max-width: 580px;
+  margin: 0 auto;
+  padding: 22px 16px 48px;
+}
+
+/* ===== BUDGET CARD ===== */
+.budget-card {
+  background: #FFF8F0;
+  border-radius: 16px;
+  padding: 26px 24px 24px;
+  box-shadow:
+    0 6px 0 rgba(0,0,0,0.15),
+    0 10px 30px rgba(0,0,0,0.12);
+  border: 3px solid #C1121F;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+/* 上部の回字ストライプ */
+.budget-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 8px;
+  background: repeating-linear-gradient(
+    90deg,
+    #C1121F 0px, #C1121F 16px,
+    #FFD000 16px, #FFD000 32px
+  );
+}
+
+/* 右下コーナーの装飾文字 */
+.budget-card::after {
+  content: '囍';
+  position: absolute;
+  bottom: -16px; right: 12px;
+  font-size: 80px;
+  color: rgba(193, 18, 31, 0.06);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.budget-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #999;
+  text-align: center;
+  margin-bottom: 8px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+.budget-display {
+  text-align: center;
+  margin: 2px 0 8px;
+  line-height: 1;
+}
+
+.budget-number {
+  font-size: 66px;
+  font-weight: 900;
+  color: #C1121F;
+  letter-spacing: -4px;
+}
+
+.budget-yen {
+  font-size: 26px;
+  color: #bbb;
+  font-weight: 600;
+  margin-left: 4px;
+  vertical-align: bottom;
+  line-height: 1.6;
+}
+
+/* ===== RANGE SLIDER ===== */
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  background: linear-gradient(90deg, #C1121F 0%, #FFD000 100%);
+  outline: none;
+  margin: 14px 0 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(193,18,31,0.2);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background: #FFF8F0;
+  border: 3px solid #C1121F;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(193,18,31,0.3), 0 3px 6px rgba(0,0,0,0.15);
+  transition: transform 0.15s;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 3px 14px rgba(193,18,31,0.45), 0 3px 8px rgba(0,0,0,0.15);
+}
+
+.range-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: #bbb;
+  margin-bottom: 18px;
+  padding: 0 2px;
+  letter-spacing: 0.5px;
+}
+
+/* ===== NOODLE HINT ===== */
+.noodle-hint {
+  background: rgba(255, 208, 0, 0.15);
+  border: 2px solid #FFD000;
+  border-radius: 10px;
+  padding: 9px 14px;
+  font-size: 12px;
+  font-weight: 900;
+  color: #B8860B;
+  text-align: center;
+  margin-bottom: 18px;
+  letter-spacing: 1.5px;
+}
+
+/* ===== SUBMIT BUTTON ===== */
+.submit-btn {
+  display: block;
+  width: 100%;
+  padding: 17px;
+  background: #C1121F;
+  color: #FFD000;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 900;
+  cursor: pointer;
+  letter-spacing: 5px;
+  box-shadow:
+    0 5px 0 #7A000A,
+    0 8px 20px rgba(0,0,0,0.2);
+  transition: all 0.15s;
+  position: relative;
+  overflow: hidden;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.25);
+}
+
+/* 光沢レイヤー */
+.submit-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 50%;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.1), transparent);
+  pointer-events: none;
+  border-radius: 10px 10px 0 0;
+}
+
+.submit-btn:hover {
+  background: #D9151F;
+  transform: translateY(-2px);
+  box-shadow:
+    0 7px 0 #7A000A,
+    0 12px 26px rgba(0,0,0,0.22);
+}
+
+.submit-btn:active {
+  transform: translateY(3px);
+  box-shadow:
+    0 2px 0 #7A000A,
+    0 4px 10px rgba(0,0,0,0.18);
+}
+
+/* ===== RESULTS ===== */
+.results { display: none; }
+
+.results.show {
+  display: block;
+  animation: fadeInUp 0.4s ease;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== SUMMARY BANNER ===== */
+.summary-banner {
+  background: #FFF8F0;
+  border: 3px solid #C1121F;
+  border-radius: 14px;
+  padding: 20px 16px 18px;
+  text-align: center;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 0 rgba(0,0,0,0.12);
+}
+
+/* 上下の回字ライン */
+.summary-banner::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+  background: repeating-linear-gradient(
+    90deg,
+    #C1121F 0px, #C1121F 12px,
+    #FFD000 12px, #FFD000 24px
+  );
+}
+
+.noodle-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #C1121F;
+  color: #FFD000;
+  border-radius: 8px;
+  padding: 10px 22px;
+  font-size: 14px;
+  font-weight: 900;
+  margin-bottom: 16px;
+  letter-spacing: 2px;
+  box-shadow: 0 3px 0 #7A000A, 0 5px 12px rgba(193,18,31,0.2);
+  animation: badgeBounce 2.5s ease infinite;
+}
+
+@keyframes badgeBounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-2px); }
+}
+
+.summary-stats {
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+}
+
+.stat-item { text-align: center; }
+
+.stat-num {
+  font-size: 30px;
+  font-weight: 900;
+  color: #C1121F;
+}
+
+.stat-label {
+  font-size: 10px;
+  color: #aaa;
+  margin-top: 3px;
+  letter-spacing: 1.5px;
+}
+
+/* ===== CATEGORY SECTION ===== */
+.category-section { margin-bottom: 24px; }
+
+.category-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 900;
+  color: #FFF8F0;
+  background: #C1121F;
+  border-radius: 6px;
+  padding: 7px 18px;
+  margin-bottom: 14px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  box-shadow: 0 3px 0 #7A000A, 0 5px 12px rgba(0,0,0,0.12);
+}
+
+/* ===== INGREDIENT GRID ===== */
+.ingredient-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+/* ===== INGREDIENT CARD ===== */
+.ingredient-card {
+  background: #FFF8F0;
+  border-radius: 14px;
+  padding: 16px 12px 14px;
+  text-align: center;
+  border: 2.5px solid rgba(255,255,255,0.6);
+  border-color: var(--card-color, #C1121F);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s cubic-bezier(.34,1.56,.64,1),
+              box-shadow 0.2s;
+  animation: cardIn 0.4s ease both;
+  box-shadow:
+    0 8px 0 rgba(0,0,0,0.1),
+    0 12px 28px rgba(0,0,0,0.15);
+}
+
+
+@keyframes cardIn {
+  0%   { opacity: 0; transform: translateY(12px) scale(0.92); }
+  65%  { transform: translateY(-3px) scale(1.02); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.popular-badge {
+  position: absolute;
+  top: 8px; right: 8px;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.ingredient-svg-wrap {
+  width: 78px; height: 78px;
+  margin: 0 auto 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.15));
+}
+
+.ingredient-svg-wrap svg { width: 100%; height: 100%; }
+
+.ingredient-name {
+  font-size: 15px;
+  font-weight: 900;
+  color: #1A1A1A;
+  margin-bottom: 3px;
+  letter-spacing: 0.5px;
+}
+
+.ingredient-texture {
+  font-size: 10px;
+  color: #bbb;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.ingredient-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(193,18,31,0.05);
+  border: 1px solid rgba(193,18,31,0.12);
+  border-radius: 7px;
+  padding: 6px 10px;
+}
+
+.ingredient-weight {
+  font-size: 11px;
+  color: #aaa;
+  font-weight: 600;
+}
+
+.ingredient-price {
+  font-size: 13px;
+  color: #C1121F;
+  font-weight: 900;
+}
+
+/* ===== TIPS ===== */
+.tips-card {
+  background: #FFF8F0;
+  border: 2.5px solid rgba(255,208,0,0.5);
+  border-radius: 14px;
+  padding: 20px 18px;
+  margin-top: 8px;
+  box-shadow: 0 4px 0 rgba(0,0,0,0.08), 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.tips-title {
+  font-size: 11px;
+  font-weight: 900;
+  color: #B8860B;
+  text-align: center;
+  margin-bottom: 14px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.tip-item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: #666;
+  line-height: 1.7;
+}
+
+/* ===== DISCLAIMER ===== */
+.disclaimer {
+  margin-top: 12px;
+  font-size: 10px;
+  color: #bbb;
+  text-align: center;
+  line-height: 1.7;
+  letter-spacing: 0.3px;
+}
+
+/* ===== PREFERENCE BUTTONS ===== */
+.pref-section {
+  margin-bottom: 16px;
+}
+
+.pref-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #bbb;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.pref-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.pref-btn {
+  background: #FFFFFF;
+  border: 2px solid rgba(193, 18, 31, 0.18);
+  border-radius: 12px;
+  padding: 12px 8px 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  transition: all 0.16s cubic-bezier(.34,1.56,.64,1);
+  font-family: inherit;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.07);
+}
+
+.pref-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: #C1121F;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.pref-btn:hover {
+  border-color: #C1121F;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 0 rgba(0,0,0,0.1), 0 6px 16px rgba(193,18,31,0.1);
+}
+
+.pref-btn:hover::before { opacity: 1; }
+
+.pref-btn.active {
+  background: #C1121F;
+  border-color: #C1121F;
+  transform: translateY(0);
+  box-shadow: 0 3px 0 #7A000A, 0 5px 14px rgba(193,18,31,0.25);
+}
+
+.pref-btn.active::before { opacity: 0; }
+
+.pref-icon {
+  font-size: 24px;
+  line-height: 1;
+  display: block;
+}
+
+.pref-text {
+  font-size: 12px;
+  font-weight: 900;
+  color: #333;
+  letter-spacing: 0.5px;
+  display: block;
+  transition: color 0.15s;
+}
+
+.pref-sub {
+  font-size: 9px;
+  color: #bbb;
+  letter-spacing: 0.3px;
+  display: block;
+  transition: color 0.15s;
+}
+
+.pref-btn.active .pref-text { color: #FFD000; }
+.pref-btn.active .pref-sub  { color: rgba(255, 208, 0, 0.65); }
+
+/* ===== FOOTER ===== */
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  color: rgba(255,255,255,0.45);
+  font-size: 10px;
+  line-height: 2;
+  margin-top: 8px;
+  letter-spacing: 1px;
+}

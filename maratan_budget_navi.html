@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌶️ 麻辣担 予算ナビ</title>
+<link rel="stylesheet" href="maratan_budget_navi.css">
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header class="header">
+  <div class="header-stars">✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦</div>
+  <div class="header-inner">
+    <!-- Lanterns -->
+    <div class="lanterns-row">
+      <!-- Lantern Left Big -->
+      <svg width="42" height="70" viewBox="0 0 42 70" xmlns="http://www.w3.org/2000/svg">
+        <line x1="21" y1="0" x2="21" y2="8" stroke="#FFD60A" stroke-width="2.5"/>
+        <rect x="9" y="8" width="24" height="4" rx="2" fill="#B8860B"/>
+        <ellipse cx="21" cy="38" rx="16" ry="24" fill="#FFD60A"/>
+        <ellipse cx="21" cy="38" rx="16" ry="24" fill="url(#lg1)" opacity="0.7"/>
+        <line x1="6" y1="24" x2="36" y2="24" stroke="#E6B800" stroke-width="1.5" opacity="0.5"/>
+        <line x1="6" y1="38" x2="36" y2="38" stroke="#E6B800" stroke-width="1.5" opacity="0.5"/>
+        <line x1="6" y1="52" x2="36" y2="52" stroke="#E6B800" stroke-width="1.5" opacity="0.5"/>
+        <line x1="21" y1="62" x2="21" y2="68" stroke="#B8860B" stroke-width="2"/>
+        <ellipse cx="21" cy="69" rx="6" ry="2" fill="#B8860B" opacity="0.6"/>
+        <defs>
+          <radialGradient id="lg1" cx="35%" cy="30%">
+            <stop offset="0%" stop-color="white" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="orange" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+      </svg>
+      <!-- Lantern Center (Red) -->
+      <svg width="52" height="80" viewBox="0 0 52 80" xmlns="http://www.w3.org/2000/svg">
+        <line x1="26" y1="0" x2="26" y2="10" stroke="#FFD60A" stroke-width="3"/>
+        <rect x="10" y="10" width="32" height="5" rx="2.5" fill="#B8860B"/>
+        <ellipse cx="26" cy="46" rx="20" ry="28" fill="#E63946"/>
+        <ellipse cx="26" cy="46" rx="20" ry="28" fill="url(#lg2)" opacity="0.6"/>
+        <line x1="7" y1="30" x2="45" y2="30" stroke="#C1121F" stroke-width="1.5" opacity="0.5"/>
+        <line x1="7" y1="46" x2="45" y2="46" stroke="#C1121F" stroke-width="1.5" opacity="0.5"/>
+        <line x1="7" y1="62" x2="45" y2="62" stroke="#C1121F" stroke-width="1.5" opacity="0.5"/>
+        <text x="26" y="51" text-anchor="middle" font-size="14" fill="#FFD60A" font-weight="bold">福</text>
+        <line x1="26" y1="74" x2="26" y2="78" stroke="#B8860B" stroke-width="2.5"/>
+        <ellipse cx="26" cy="79" rx="7" ry="2.2" fill="#B8860B" opacity="0.55"/>
+        <defs>
+          <radialGradient id="lg2" cx="35%" cy="28%">
+            <stop offset="0%" stop-color="white" stop-opacity="0.4"/>
+            <stop offset="100%" stop-color="red" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+      </svg>
+      <!-- Lantern Right -->
+      <svg width="42" height="70" viewBox="0 0 42 70" xmlns="http://www.w3.org/2000/svg">
+        <line x1="21" y1="0" x2="21" y2="8" stroke="#FFD60A" stroke-width="2.5"/>
+        <rect x="9" y="8" width="24" height="4" rx="2" fill="#B8860B"/>
+        <ellipse cx="21" cy="38" rx="16" ry="24" fill="#FFD60A"/>
+        <ellipse cx="21" cy="38" rx="16" ry="24" fill="url(#lg3)" opacity="0.7"/>
+        <line x1="6" y1="24" x2="36" y2="24" stroke="#E6B800" stroke-width="1.5" opacity="0.5"/>
+        <line x1="6" y1="38" x2="36" y2="38" stroke="#E6B800" stroke-width="1.5" opacity="0.5"/>
+        <line x1="6" y1="52" x2="36" y2="52" stroke="#E6B800" stroke-width="1.5" opacity="0.5"/>
+        <line x1="21" y1="62" x2="21" y2="68" stroke="#B8860B" stroke-width="2"/>
+        <ellipse cx="21" cy="69" rx="6" ry="2" fill="#B8860B" opacity="0.6"/>
+        <defs>
+          <radialGradient id="lg3" cx="35%" cy="30%">
+            <stop offset="0%" stop-color="white" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="orange" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+      </svg>
+    </div>
+
+    <div class="header-title">麻辣担<br>予算ナビ</div>
+    <div class="header-subtitle">✦ いくら分食べたいか教えてね！✦</div>
+  </div>
+
+  <!-- Cloud wave -->
+  <svg class="cloud-wave" viewBox="0 0 400 36" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,36 L0,18 Q20,4 40,18 Q60,32 80,18 Q100,4 120,18 Q140,32 160,18 Q180,4 200,18 Q220,32 240,18 Q260,4 280,18 Q300,32 320,18 Q340,4 360,18 Q380,32 400,18 L400,36 Z" fill="#3ABFB8"/>
+  </svg>
+</header>
+
+<!-- ========== MAIN ========== -->
+<main class="main">
+
+  <!-- BUDGET CARD -->
+  <div class="budget-card">
+    <div class="budget-label">💰 いくら分食べたい？</div>
+    <div class="budget-display">
+      <span class="budget-number" id="budgetNum">1,000</span><span class="budget-yen">円</span>
+    </div>
+    <input type="range" id="budgetSlider" min="1000" max="3000" step="50" value="1000">
+    <div class="range-labels">
+      <span>1,000円</span>
+      <span>1,500円</span>
+      <span>2,000円</span>
+      <span>3,000円</span>
+    </div>
+    <!-- 嗜好選択 -->
+    <div class="pref-section">
+      <div class="pref-label">🎯 どんな気分で食べる？</div>
+      <div class="pref-grid" id="prefGrid">
+        <button class="pref-btn" data-pref="healthy" onclick="selectPref(this)">
+          <span class="pref-icon">🥬</span>
+          <span class="pref-text">ヘルシー</span>
+          <span class="pref-sub">野菜たっぷり</span>
+        </button>
+        <button class="pref-btn" data-pref="protein" onclick="selectPref(this)">
+          <span class="pref-icon">🥩</span>
+          <span class="pref-text">タンパク質多め</span>
+          <span class="pref-sub">肉・海鮮重視</span>
+        </button>
+        <button class="pref-btn" data-pref="hearty" onclick="selectPref(this)">
+          <span class="pref-icon">🌶️</span>
+          <span class="pref-text">がっつり</span>
+          <span class="pref-sub">ボリューム満点</span>
+        </button>
+        <button class="pref-btn active" data-pref="any" onclick="selectPref(this)">
+          <span class="pref-icon">✨</span>
+          <span class="pref-text">なんでもOK</span>
+          <span class="pref-sub">バランス重視</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="noodle-hint" id="noodleHint">🍜 麺80g 無料サービス対象！</div>
+    <button class="submit-btn" onclick="showRecommendation()">✦ おすすめを見る！🌶️ ✦</button>
+    <p class="disclaimer">※ 表示される重量・金額はあくまで目安です。実際のお会計は店舗での計量でご確認ください🙏</p>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="results" id="results"></div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  楊國福麻辣湯を参考に作成｜価格の目安は約400円/100g<br>
+  実際の価格・メニューは各店舗にてご確認ください ✦
+</footer>
+
+<script src="maratan_budget_navi.js"></script>
+</body>
+</html>
