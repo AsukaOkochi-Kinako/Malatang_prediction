@@ -1,4 +1,4 @@
-# 🍲 Maratan Prediction (麻辣湯 具材提案ツール)
+# 🍲 Malatang Prediction (麻辣湯 具材提案ツール)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)
@@ -23,7 +23,7 @@
 
 ```bash
 # リポジトリをクローン
-git clone [https://github.com/AsukaOkochi-Kinako/maratan_prediction.git](https://github.com/AsukaOkochi-Kinako/maratan_prediction.git)
+git clone [https://github.com/AsukaOkochi-Kinako/Malatang_prediction.git](https://github.com/AsukaOkochi-Kinako/Malatang_prediction.git)
 
 # ディレクトリに移動
-cd maratan_prediction
+cd Malatang_prediction
