@@ -23,14 +23,6 @@ body {
   overflow: hidden;
 }
 
-/* 上部の帯（クリーム色） */
-.header::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 8px;
-  background: #FFF5E0;
-}
 
 /* 回字模様ボーダー */
 .header::after {
