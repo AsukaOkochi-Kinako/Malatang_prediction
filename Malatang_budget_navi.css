@@ -108,6 +108,12 @@ body {
   padding: 22px 16px 48px;
 }
 
+.main-banner {
+  max-width: 580px;
+  margin: 0 auto;
+  padding: 22px 16px;
+}
+
 /* ===== BUDGET CARD ===== */
 .budget-card {
   background: #FFF8F0;
